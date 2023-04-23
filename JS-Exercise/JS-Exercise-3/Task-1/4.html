@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+        <div class="posDiv">
+            <label for="Columns">Columns: <input type="Number" id="columns" name="columns" /></label>
+            <p></p>
+            <label for="Rows">Rows: <input type="Number" id="rows" name="rows" /></label>
+            <p></p>
+            <input type="button" value="Display Table" onclick="displayChart()" />
+                        
+        </div>
+    <div class="tableDiv">
+        <p id="displayTable"></p>
+    </div>
+
+    <script>
+        function displayChart() {
+    let table = '';
+    let rows = document.getElementById("rows").value;
+    let colmns = document.getElementById("columns").value;
+    for (let i = 1; i <= rows; i++) {
+        table += '<tr>';
+        for (let j = 1; j <= colmns; j++) {
+            table += '<td>' + 'Column: ' + j + ' Row: ' + i +  '</td>'; 
+        }
+        table += '</tr>';
+    }
+    document.getElementById("displayTable").innerHTML = '<table border=1>' + table + '</table>'
+
+}
+
+    </script>
+</body>
+</html>
